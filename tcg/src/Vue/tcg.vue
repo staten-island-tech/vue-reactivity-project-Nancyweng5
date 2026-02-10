@@ -5,22 +5,12 @@
 </template>
 
 <script setup>
-const standard5stars = [
-  { name: "Diluc", rarity: 5, image: "/public/diluc_wish.webp" },
-  { name: "Jean", rarity: 5, image: "/public/jean_wish.webp" },
-  { name: "Mona", rarity: 5, image: "/public/mona_wish.webp" },
-  { name: "Qiqi", rarity: 5, image: "/public/qiqi_wish.webp" },
-  { name: "Keqing", rarity: 5, image: "/public/keqing_wish.webp" },
-  { name: "Tighnari", rarity: 5, image: "/public/tighnari_wish.webp" },
-  { name: "Dehya", rarity: 5, image: "/public/dehya_wish.webp" },
-  { name: "Yumemizuki Mizuki", rarity: 5, image: "/public/yumemizuki_mizuki_wish.webp" },
-];
-const limited5stars = [
-  { name: "Venti", rarity: 5, image: "/public/venti_wish.webp" },
-  { name: "Klee", rarity: 5, image: "/public/klee_wish.webp" },
-  { name: "Zhongli", rarity: 5, image: "/public/zhongli_wish.webp" },
-  { name: "Tartaglia", rarity: 5, image: "/public/Tartaglia_wish.webp" },
-  { name: "Albedo", rarity: 5, image: "/public/albedo.webp" },
+const mythical = [
+    { name: "Venti", rarity: 5, image: "/public/venti_wish.webp" },
+    { name: "Zhongli", rarity: 5, image: "/public/zhongli_wish.webp" },
+    { name: "Raiden Shogun", rarity: 5, image: "/public/raiden_shogun_wish.webp" },
+]
+const legendary = [
   { name: "Ganyu", rarity: 5, image: "/public/ganyu_wish.webp" },
   { name: "Xiao", rarity: 5, image: "/public/xiao_wish.webp" },
   { name: "Hu Tao", rarity: 5, image: "/public/hu_tao_wish.webp" },
@@ -28,7 +18,6 @@ const limited5stars = [
   { name: "Kaedehara Kazuha", rarity: 5, image: "/public/kaedehara_kazuha_wish.webp" },
   { name: "Kamisato Ayaka", rarity: 5, image: "/public/kamisato_ayaka_wish.webp" },
   { name: "Yoimiya", rarity: 5, image: "/public/yoimiya_wish.webp" },
-  { name: "Raiden Shogun", rarity: 5, image: "/public/raiden_shogun_wish.webp" },
   { name: "Sangonomiya Kokomi", rarity: 5, image: "/public/sangonomiya_kokomi_wish.webp" },
   { name: "Arataki Itto", rarity: 5, image: "/public/itto.webp" },
   { name: "Shenhe", rarity: 5, image: "/public/shenhe_wish.webp" },
@@ -69,7 +58,16 @@ const limited5stars = [
   { name: "Columbina", rarity: 5, image: "/public/columbina.webp" },
   { name: "Zibai", rarity: 5, image: "/public/zibai_wish.webp" },
 ];
-const fourStars = [
+const epic = [
+  { name: "Albedo", rarity: 5, image: "/public/albedo.webp" },
+  { name: "Jean", rarity: 5, image: "/public/jean_wish.webp" },
+  { name: "Mona", rarity: 5, image: "/public/mona_wish.webp" },
+  { name: "Keqing", rarity: 5, image: "/public/keqing_wish.webp" },
+  { name: "Tighnari", rarity: 5, image: "/public/tighnari_wish.webp" },
+  { name: "Dehya", rarity: 5, image: "/public/dehya_wish.webp" },
+  { name: "Yumemizuki Mizuki", rarity: 5, image: "/public/yumemizuki_mizuki_wish.webp" },
+];
+const rare = [
   { name: "Amber", rarity: 4, image: "/public/amber.webp" },
   { name: "Kaeya", rarity: 4, image: "/public/kaeya_wish.webp" },
   { name: "Lisa", rarity: 4, image: "/public/lisa_wish.webp" },
@@ -118,6 +116,8 @@ const fourStars = [
   { name: "Dahlia", rarity: 4, image: "/public/dahlia_wish.webp" },
   { name: "Aino", rarity: 4, image: "/public/aino.webp" },
   { name: "Jahoda", rarity: 4, image: "/public/jahoda_wish.webp" },
+];
+const uncommon = [
   { name: "Favonius Sword", rarity: 4, image: "/public/weapon_favonius_sword.webp" },
   { name: "Favonius Lance", rarity: 4, image: "/public/weapon_favonius_lance.webp" },
   { name: "Favonius Warbow", rarity: 4, image: "/public/weapon_favonius_warbow.webp" },
@@ -134,7 +134,7 @@ const fourStars = [
   { name: "Eye of Perception", rarity: 4, image: "/public/weapon_eye_of_perception.webp" },
   { name: "The Flute", rarity: 4, image: "/public/weapon_the_flute.webp" }
 ];
-const threeStarWeapons = [
+const common = [
   { name: "Amber Catalyst", rarity: 3, image: "/public/weapon_amber_catalyst.webp" },
   { name: "Black Tassel", rarity: 3, image: "/public/weapon_black_tassel.webp" },
   { name: "Bloodtainted Greatsword", rarity: 3, image: "/public/weapon_bloodtainted_greatsword.webp" },
