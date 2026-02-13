@@ -1,13 +1,17 @@
 <template>
-    <div>
+    <div class = "packopener">
+      <div class = "openpack"></div>
+      
         
     </div>
 </template>
 
 <script setup>
-const mythical = [
-  { name: "Venti", rarity: 5, image: "/public/venti_wish.webp" },
-  { name: "Zhongli", rarity: 5, image: "/public/zhongli_wish.webp" },
+import {ref} from 'vue'
+import index from 'index.vue'
+ const mythical = [
+   { name: "Venti", rarity: 2, role: "Sub DPS", image: "/public/venti.webp" },
+  { name: "Zhongli", rarity: 5, role: "Support", image: "/public/zhongli_wish.webp" },
   { name: "Raiden Shogun", rarity: 5, image: "/public/raiden_shogun_wish.webp" },
   { name: "Kaedehara Kazuha", rarity: 5, image: "/public/kaedehara_kazuha_wish.webp" },
   { name: "Flins", rarity: 5, role: "DPS", image: "/public/flins.webp" },
@@ -39,6 +43,9 @@ const legendary = [
   { name: "Mualani", rarity: 4, role: "Main DPS", image: "/public/mualani.webp" },
   { name: "Arlecchino", rarity: 4, role: "Main DPS", image: "/public/arlecchino.webp" },
   { name: "Clorinde", rarity: 4, role: "Main DPS", image: "/public/clorinde.webp" },
+  { name: "Xingqiu", rarity: 4, role: "Sub DPS", image: "/public/xingqiu.webp" },
+  { name: "Chevreuse", rarity: 4, role: "Support", image: "/public/chevreuse.webp" },
+  { name: "Xiao", rarity: 3, role: "Main DPS", image: "/public/xiao.webp" },
 ];
 const epic = [
   { name: "Jean", rarity: 4, role: "Support", image: "/public/jean.webp" },
@@ -56,10 +63,7 @@ const epic = [
   { name: "Fischl", rarity: 4, role: "Sub DPS", image: "/public/fischl.webp" },
   { name: "Kuki Shinobu", rarity: 4, role: "Sub DPS", image: "/public/kuki_shinobu.webp" },
   { name: "Xiangling", rarity: 4, role: "Sub DPS", image: "/public/xiangling.webp" },
-  { name: "Xingqiu", rarity: 4, role: "Sub DPS", image: "/public/xingqiu.webp" },
-  { name: "Chevreuse", rarity: 4, role: "Support", image: "/public/chevreuse.webp" },
   { name: "Wanderer", rarity: 3, role: "Main DPS", image: "/public/wanderer.webp" },
-  { name: "Xiao", rarity: 3, role: "Main DPS", image: "/public/xiao.webp" },
 ];
 
 const rare = [
@@ -92,7 +96,6 @@ const uncommon = [
   { name: "Yumemizuki", rarity: 2, role: "Main DPS", image: "/public/yumemizuki.webp" },
   { name: "Qiqi", rarity: 2, role: "Support", image: "/public/qiqi.webp" },
   { name: "Tighnari", rarity: 2, role: "Sub DPS", image: "/public/tighnari.webp" },
-  { name: "Venti", rarity: 2, role: "Sub DPS", image: "/public/venti.webp" },
   { name: "Dehya", rarity: 2, role: "Support", image: "/public/dehya.webp" },
   { name: "Ifa", rarity: 2, role: "Sub DPS", image: "/public/ifa.webp" },
   { name: "Barbara", rarity: 2, role: "Support", image: "/public/barbara.webp" },
@@ -112,7 +115,6 @@ const uncommon = [
   { name: "Gaming", rarity: 2, role: "Main DPS", image: "/public/gaming.webp" },
   { name: "Kachina", rarity: 2, role: "Sub DPS", image: "/public/kachina.webp" },
 ];
-
 const common = [
   { name: "Aloy", rarity: 1, role: "Sub DPS", image: "/public/aloy.webp" },
   { name: "Amber", rarity: 1, role: "Sub DPS", image: "/public/amber.webp" },
@@ -132,8 +134,30 @@ const common = [
   { name: "Sethos", rarity: 1, role: "Sub DPS", image: "/public/sethos.webp" },
 ];
 
+const openingpack = ref(false)
+const currentindex = ref(-1)
+const packsumamry = ref(false)
+const currentpack = ref([])
+const cardscollected = ref ([])
+const showcollectedcards = ref(false)
+function random(array){
+  return array[Math.floor(Math.random()* array.length)]
+}
+function openpack(){
+  currentpack.value = []
+  currentindex = 0
+  packsumamry.value = false
+  openingpack.value = true
+}
+for (let i = 0; i < 5; i++) {
+    let cards = Math.random()
+}
+
 </script>
 
 <style scoped>
 
 </style>
+
+<!-- background = #FCF6F5
+words = #7b9acc  -->
