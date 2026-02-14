@@ -1,14 +1,23 @@
 <template>
-    <div class = "packopener">
-      <div class = "openpack"></div>
-      
-        
+    <div class = "packopenerpage">
+      <img v-if = "!opening" src = "/packcover" class = "pack" @click = "openpack">
+      <div vif = "opening && currentcard" class = "cardcontainer">
+        <Carddisplaye :card = "currentcard" @click = "nextcard"/>
+        <p>Click to continue</p>
+      </div>
+      <div v-if = "summary">
+        <h2> You Puller : </h2>
+        <div class = "summary">
+          <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
+        </div> 
+      </div>
     </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
-import index from 'index.vue'
+import Carddisplaye from '@/Components/carddisplaye.vue';
+
  const mythical = [
    { name: "Venti", rarity: 2, role: "Sub DPS", image: "/public/venti.webp" },
   { name: "Zhongli", rarity: 5, role: "Support", image: "/public/zhongli_wish.webp" },
@@ -135,24 +144,28 @@ const common = [
 ];
 
 const openingpack = ref(false)
-const currentindex = ref(-1)
-const packsumamry = ref(false)
-const currentpack = ref([])
-const cardscollected = ref ([])
-const showcollectedcards = ref(false)
+const summary = ref(false)
+const pack = ref([])
+const index = ref (0)
+
 function random(array){
   return array[Math.floor(Math.random()* array.length)]
 }
 function openpack(){
-  currentpack.value = []
-  currentindex = 0
-  packsumamry.value = false
-  openingpack.value = true
+  pack.value = []
+  index.value = 0
+  opening.value = true
+  summary.value = false
 }
 for (let i = 0; i < 5; i++) {
     let cards = Math.random()
+    if (cards < 0.02) pack.value.push(random(mythical))
+    else if (cards < 0.08) pack.value.push(random(legendary))
+  else if (cards < 0.2) pack.value.push(random(epic))
+else if (cards < 0.4) pack.value.push(random(rare))
+else if (cards < 0.7) pack.value.push(random(uncommon))
+else pack.value.push(random(common))
 }
-
 </script>
 
 <style scoped>
