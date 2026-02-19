@@ -1,8 +1,8 @@
 <template>
     <div class = "packopenerpage">
       <img v-if = "!opening" src = "/packcover" class = "pack" @click = "openpack">
-      <div vif = "opening && currentcard" class = "cardcontainer">
-        <Carddisplaye :card = "currentcard" @click = "nextcard"/>
+      <div v-if = "opening && currentcard" class = "cardcontainer">
+        <div class = "card":class = "rarity(currentcard.rarity)"@click = "nextcard"></div>
         <p>Click to continue</p>
       </div>
       <div v-if = "summary">
@@ -147,6 +147,7 @@ const openingpack = ref(false)
 const summary = ref(false)
 const pack = ref([])
 const index = ref (0)
+currentcard.value = pack.value[0]
 
 function random(array){
   return array[Math.floor(Math.random()* array.length)]
@@ -156,15 +157,29 @@ function openpack(){
   index.value = 0
   opening.value = true
   summary.value = false
-}
 for (let i = 0; i < 5; i++) {
     let cards = Math.random()
     if (cards < 0.02) pack.value.push(random(mythical))
     else if (cards < 0.08) pack.value.push(random(legendary))
-  else if (cards < 0.2) pack.value.push(random(epic))
-else if (cards < 0.4) pack.value.push(random(rare))
-else if (cards < 0.7) pack.value.push(random(uncommon))
-else pack.value.push(random(common))
+    else if (cards < 0.2) pack.value.push(random(epic))
+    else if (cards < 0.4) pack.value.push(random(rare))
+    else if (cards < 0.7) pack.value.push(random(uncommon))
+    else pack.value.push(random(common))
+  }
+
+}
+function nextcard(){
+  index.value ++
+  if (index.value < pack.value.length){
+    currentcard.value = pack.value[index.value]
+  } else {
+    finish()
+  }
+}
+function finish(){
+  opening.value = false 
+  summary.valye = true
+  currentcard.value = null
 }
 </script>
 

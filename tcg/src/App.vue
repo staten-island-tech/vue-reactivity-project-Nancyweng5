@@ -5,7 +5,13 @@
 </template>
 
 <script setup>
-import navigationbar from './Components/navigationbar.vue';
+import {ref} from "vue"
+import navigationbar from "./Components/navigationbar.vue";
+import home from "./Vue/home.vue";
+import pack from "./Vue/pack.vue";
+import index from "./Vue/index.vue";
+const currentpage = ref("home")
+const collection = ref([])
 </script>
 
 <style lang="scss" scoped>
