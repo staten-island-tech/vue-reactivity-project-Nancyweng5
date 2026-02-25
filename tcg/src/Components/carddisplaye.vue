@@ -1,5 +1,5 @@
 <template>
-      <div class="card" :class="rarityClass">
+    <div class="card">
     <img :src="card.image" />
   </div>
 
@@ -9,6 +9,6 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

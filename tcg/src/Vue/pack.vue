@@ -1,6 +1,6 @@
 <template>
     <div class = "packopenerpage">
-      <img v-if = "!opening" src = "/packcover" class = "pack" @click = "openpack">
+      <img v-if = "!opening" src = "/public/packcover.webp" class = "pack" @click = "openpack">
       <div v-if = "opening && currentcard" class = "cardcontainer">
         <div class = "card":class = "rarity(currentcard.rarity)"@click = "nextcard"></div>
         <p>Click to continue</p>
@@ -178,7 +178,7 @@ function nextcard(){
 }
 function finish(){
   opening.value = false 
-  summary.valye = true
+  summary.value = true
   currentcard.value = null
 }
 </script>

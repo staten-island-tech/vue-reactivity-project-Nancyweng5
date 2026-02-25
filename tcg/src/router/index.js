@@ -1,14 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import tcg from 'tcg.vue'
-import index from '/index.vue'
-
+import home from '@/Vue/home.vue'
+import pack from '@/Vue/pack.vue'
+import index from '@/Vue/index.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path : '/',
       name: 'home',
-      component: tcg
+      component: home
+    },
+    {
+      path : '/pack',
+      name : 'pack',
+      components : pack
     },
     {
       path: '/index',

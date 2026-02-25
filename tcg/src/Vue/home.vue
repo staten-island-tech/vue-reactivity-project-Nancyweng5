@@ -1,6 +1,7 @@
 <template>
     <div class = "home">
-        <img src = "/packcover.webp" class = "packcover"/>
+        <h2>test</h2>
+ 
     </div>
 </template>
 
