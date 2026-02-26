@@ -2,7 +2,7 @@
     <div class = "packopenerpage">
       <img v-if = "!opening" src = "/public/packcover.webp" class = "pack" @click = "openpack">
       <div v-if = "opening && currentcard" class = "cardcontainer">
-        <div class = "card":class = "rarity(currentcard.rarity)"@click = "nextcard"></div>
+        <div class="card" :class="rarity(currentcard.rarity)" @click="nextcard">
         <p>Click to continue</p>
       </div>
       <div v-if = "summary">
@@ -11,6 +11,7 @@
           <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
         </div> 
       </div>
+      </div> 
     </div>
 </template>
 
@@ -166,7 +167,7 @@ for (let i = 0; i < 5; i++) {
     else if (cards < 0.7) pack.value.push(random(uncommon))
     else pack.value.push(random(common))
   }
-
+   currentcard.value = pack.value[0]
 }
 function nextcard(){
   index.value ++
@@ -181,10 +182,50 @@ function finish(){
   summary.value = true
   currentcard.value = null
 }
+function rarity(r){
+  if (r === 1) return "common"
+  if (r === 2) return "uncommon"
+  if (r === 3) return "rare"
+  if (r === 4) return "epic"
+  if (r === 5) return "legendary"
+  return "mythical";
+}
 </script>
 
 <style scoped>
+.packopenerpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
 
+.pack {
+  width: 250px;
+  cursor: pointer;
+}
+
+.card {
+  width: 200px;
+  border: 5px solid;
+  border-radius: 12px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.common { border-color: gray; }
+.uncommon { border-color: green; }
+.rare { border-color: blue; }
+.epic { border-color: purple; }
+.legendary { border-color: gold; }
+.mythical { border-color: hotpink; }
+
+.summary {
+  display: flex;
+  gap: 10px;
+}
 </style>
 
 <!-- background = #FCF6F5
