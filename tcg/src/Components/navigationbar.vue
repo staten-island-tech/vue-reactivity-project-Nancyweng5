@@ -1,12 +1,13 @@
 <template>
     <nav>
-    <button @click="page.value = 'home'">Home</button>
-    <button @click="page.value = 'pack'">Pack</button>
-    <button @click="page.value = 'index'">Index</button>
+    <RouterLink to="/home"><button>Home</button></RouterLink>
+    <RouterLink to="/pack"><button>Pack</button></RouterLink>
+    <RouterLink to="/index"><button>Index</button></RouterLink>
   </nav>
 </template>
-
 <script setup>
+import { RouterLink } from 'vue-router';
+
 const props = defineProps({
   page: Object
 })

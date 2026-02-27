@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Navigationbar :page="currentpage" />
-    <home v-if="currentpage === 'home'" />
-    <pack v-if="currentpage === 'pack'" />
-    <index v-if="currentpage === 'index'" />
+    <navigationbar :page="currentpage" />
+    <RouterView/>
   </div>
 </template>
 
@@ -13,6 +11,7 @@ import Navigationbar from "@/Components/navigationbar.vue"
 import home from "./Vue/home.vue"
 import index from "./Vue/index.vue"
 import pack from "./Vue/pack.vue"
+import { RouterView } from "vue-router"
 const currentpage = ref("home")
 </script>
 
