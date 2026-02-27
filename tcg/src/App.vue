@@ -1,18 +1,18 @@
 <template>
   <div>
     <Navigationbar :page="currentpage" />
-    <Home v-if="currentpage === 'home'" />
-    <Pack v-if="currentpage === 'pack'" />
-    <Index v-if="currentpage === 'index'" />
+    <home v-if="currentpage === 'home'" />
+    <pack v-if="currentpage === 'pack'" />
+    <index v-if="currentpage === 'index'" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue"
 import Navigationbar from "@/Components/navigationbar.vue"
-import Home from "@/Components/home.vue"
-import Pack from "@/Components/pack.vue"
-import Index from "@/Components/index.vue"
+import home from "./Vue/home.vue"
+import index from "./Vue/index.vue"
+import pack from "./Vue/pack.vue"
 const currentpage = ref("home")
 </script>
 

@@ -1,6 +1,5 @@
 <template>
     <div class = "home">
-        <h2>test</h2>
     </div>
 </template>
 
@@ -13,6 +12,7 @@ display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  background-color: #FCF6F5;
 }
 .packcover {
     width: 250px;

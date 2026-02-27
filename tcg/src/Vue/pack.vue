@@ -1,7 +1,7 @@
 <template>
     <div class = "packopenerpage">
-      <img v-if = "!opening" src = "/public/packcover.webp" class = "pack" @click = "openpack">
-      <div v-if = "opening && currentcard" class = "cardcontainer">
+      <img v-if = "!openingpack" src = "/public/packcover.webp" class = "pack" @click = "openpack">
+      <div v-if = "openingpack && currentcard" class = "cardcontainer">
         <div class="card" :class="rarity(currentcard.rarity)" @click="nextcard">
         <p>Click to continue</p>
       </div>
@@ -156,7 +156,7 @@ function random(array){
 function openpack(){
   pack.value = []
   index.value = 0
-  opening.value = true
+  openingpack.value = true
   summary.value = false
 for (let i = 0; i < 5; i++) {
     let cards = Math.random()

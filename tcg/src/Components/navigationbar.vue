@@ -18,16 +18,16 @@ nav {
   justify-content: center;
   gap: 40px;
   padding: 20px;
-  background: #7b9acc;
+  background: #FCF6F5;
 }
 button {
   background: none;
   border: none;
-  color: white;
+  color: #7b9acc;
   font-size: 18px;
   cursor: pointer;
 }
 button:hover {
-  color: #FCF6F5;
+  color: #2f6dcf;
 }
 </style>
