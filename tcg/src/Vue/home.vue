@@ -1,9 +1,15 @@
 <template>
     <div class = "home">
+      <h2>home</h2>
+      <div class = "topack">
+        <img @click = "" src = "/packcover.webp">
+      </div>
     </div>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
+
 </script>
 
 <style  scoped>

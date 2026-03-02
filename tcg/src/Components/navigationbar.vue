@@ -1,6 +1,6 @@
 <template>
     <nav>
-    <RouterLink to="/home"><button>Home</button></RouterLink>
+    <RouterLink to="/"><button>Home</button></RouterLink>
     <RouterLink to="/pack"><button>Pack</button></RouterLink>
     <RouterLink to="/index"><button>Index</button></RouterLink>
   </nav>

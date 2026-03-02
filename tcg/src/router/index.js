@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import home from '@/Vue/home.vue'
 import pack from '@/Vue/pack.vue'
 import index from '@/Vue/index.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -18,7 +19,7 @@ const router = createRouter({
     {
       path: '/index',
       name: 'index',
-      component: index,
+      component: index
     }
   ],
 })
