@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navigationbar :page="currentpage" />
     <RouterView/>
   </div>
 </template>

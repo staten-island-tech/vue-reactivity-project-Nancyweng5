@@ -14,12 +14,12 @@ const router = createRouter({
     {
       path : '/pack',
       name : 'pack',
-      components : pack
+      component : pack
     },
     {
       path: '/index',
       name: 'index',
-      component: index
+      component : index
     }
   ],
 })

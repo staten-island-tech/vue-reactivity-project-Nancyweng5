@@ -18,6 +18,7 @@
 <script setup>
 import {ref} from 'vue'
 import Carddisplaye from '@/Components/carddisplaye.vue';
+import { RouterLink } from 'vue-router';
 
  const mythical = [
    { name: "Venti", rarity: 2, role: "Sub DPS", image: "/public/venti.webp" },
@@ -148,7 +149,7 @@ const openingpack = ref(false)
 const summary = ref(false)
 const pack = ref([])
 const index = ref (0)
-currentcard.value = pack.value[0]
+const currentcard = ref(null)
 
 function random(array){
   return array[Math.floor(Math.random()* array.length)]
@@ -178,7 +179,7 @@ function nextcard(){
   }
 }
 function finish(){
-  opening.value = false 
+  openingpack.value = false 
   summary.value = true
   currentcard.value = null
 }
