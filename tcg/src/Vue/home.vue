@@ -3,8 +3,8 @@
       <Navigationbar></Navigationbar>
       <div class = "topack">
         <RouterLink to="/pack">
-  Test Home
-</RouterLink>
+          <img src="/packcover.png">
+        </RouterLink>
       </div>
     </div>
 </template>

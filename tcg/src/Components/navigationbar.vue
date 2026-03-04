@@ -1,7 +1,6 @@
 <template>
     <nav>
     <RouterLink to="/"><button>Home</button></RouterLink>
-    <RouterLink to="/pack"><button>Pack</button></RouterLink>
     <RouterLink to="/index"><button>Index</button></RouterLink>
   </nav>
 </template>
@@ -11,7 +10,7 @@ import { RouterLink } from 'vue-router';
 const props = defineProps({
   page: Object
 })
-</script>
+</script> 
 
 <style scoped>
 nav {
@@ -28,7 +27,5 @@ button {
   font-size: 18px;
   cursor: pointer;
 }
-button:hover {
-  color: #2f6dcf;
-}
+button:hover { color: #2f6dcf; }
 </style>
