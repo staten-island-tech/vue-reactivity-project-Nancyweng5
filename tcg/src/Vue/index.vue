@@ -8,6 +8,8 @@
 
 <script setup>
 import Carddisplaye from '@/Components/carddisplaye.vue';
+import { ref } from 'vue';
+const pack = ref([])
 
 
 

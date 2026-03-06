@@ -13,7 +13,6 @@ defineProps({
 <style scoped>
 .card {
   width: 200px;
-  border: 4px solid black;
   border-radius: 10px;
 }
 .card img {
