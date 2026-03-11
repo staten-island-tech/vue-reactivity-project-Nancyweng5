@@ -1,13 +1,13 @@
 <template>
     <div class = "packopenerpage">
-      <img v-if = "!openingpack && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+      <img v-if = "!openingpack" src = "/packcover.png" class = "pack" @click = "openpack">
       <div v-if = "openingpack && currentcard" class = "cardcontainer">
         <div class="card" :class="rarity(currentcard.rarity)" @click="nextcard">
           <img :src = "currentcard.image"/>
         <h5>{{currentcard.name}}</h5>
       </div>
-      <div v-if="summary">
-        <h2> You Pulled : </h2>
+      <div v-if = "summary">
+        <h2> You Puller : </h2>
         <div class = "summary">
           <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
         </div> 
@@ -173,19 +173,15 @@ function nextcard(){
   index.value ++
   if (index.value < pack.value.length){
     currentcard.value = pack.value[index.value]
-    console.log(currentcard.value, pack.value.length)
   } else {
     finish()
-    console.log("i should show smth")
   }
 }
 function finish(){
   openingpack.value = false 
   summary.value = true
   currentcard.value = null
-  console.log(summary.value)
 }
-
 function rarity(r){
   if (r === 1) return "common"
   if (r === 2) return "uncommon"
@@ -208,7 +204,7 @@ function rarity(r){
 }
 
 .pack {
-  width: 250px;
+  width: 200px;
   cursor: pointer;
   margin-top: 70px;
 }

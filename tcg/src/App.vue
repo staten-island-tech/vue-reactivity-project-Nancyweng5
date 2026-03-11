@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <Navigationbar/>
+  <div class = "app">
+    <navigationbar/>
     <RouterView/>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue"
+import navigationbar from "@/Components/navigationbar.vue"
 import { RouterView } from "vue-router"
-import Navigationbar from "./Components/navigationbar.vue";
-const currentpage = ref("home")
 </script>
 
 <style scoped>
-
 </style>
