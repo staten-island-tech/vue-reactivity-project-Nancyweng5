@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class = "index">
         <h2>Your cards</h2>
         <pulledcards/>
     </div>
@@ -11,5 +11,8 @@ import pulledcards from '@/Components/pulledcards.vue';
 </script>
 
 <style  scoped>
-
+.index{
+    background-color: #FCF6F5;
+    width: 300px;
+}
 </style>
