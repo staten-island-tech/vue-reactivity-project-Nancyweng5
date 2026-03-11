@@ -1,24 +1,34 @@
 <template>
     <div class = "packopenerpage">
+<<<<<<< Updated upstream
       <img v-if = "!openingpack && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+=======
+      <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+>>>>>>> Stashed changes
       <div v-if = "openingpack && currentcard" class = "cardcontainer">
         <div class="card" :class="rarity(currentcard.rarity)" @click="nextcard">
           <img :src = "currentcard.image"/>
         <h5>{{currentcard.name}}</h5>
       </div>
+<<<<<<< Updated upstream
       <div v-if="summary">
+=======
+    </div>
+      <div v-if = "summary" @click = "reset">
+>>>>>>> Stashed changes
         <h2> You Pulled : </h2>
         <div class = "summary">
           <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
-        </div> 
+        </div>
       </div>
       </div> 
-    </div>
 </template>
 
 <script setup>
 import {ref} from 'vue'
 import Carddisplaye from '@/Components/carddisplaye.vue';
+import { cards } from '@/pulledcards.js'
+
 
 const mythical = [
   { name: "Venti", rarity: 2, role: "Sub DPS", image: "/Venti_Wish.webp" },
@@ -180,12 +190,19 @@ function nextcard(){
   }
 }
 function finish(){
+  cards.value.push(...pack.value);
   openingpack.value = false 
   summary.value = true
   currentcard.value = null
   console.log(summary.value)
 }
+<<<<<<< Updated upstream
 
+=======
+function reset(){
+  summary.value = false
+}
+>>>>>>> Stashed changes
 function rarity(r){
   if (r === 1) return "common"
   if (r === 2) return "uncommon"
@@ -206,7 +223,14 @@ function rarity(r){
   background-color: #FCF6F5;
   min-height: 100vh;
 }
-
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
 .pack {
   width: 250px;
   cursor: pointer;
