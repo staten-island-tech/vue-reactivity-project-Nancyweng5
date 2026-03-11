@@ -2,7 +2,11 @@
     <div class = "packopenerpage">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <img v-if = "!openingpack && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+=======
+      <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+>>>>>>> Stashed changes
 =======
       <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
 >>>>>>> Stashed changes
@@ -16,7 +20,12 @@
       </div>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <div v-if="summary">
+=======
+    </div>
+      <div v-if = "summary" @click = "reset">
+>>>>>>> Stashed changes
 =======
     </div>
       <div v-if = "summary" @click = "reset">
@@ -212,6 +221,9 @@ function reset(){
 function reset(){
   summary.value = false
 }
+function reset(){
+  summary.value = false
+}
 function rarity(r){
   if (r === 1) return "common"
   if (r === 2) return "uncommon"
@@ -241,7 +253,10 @@ function rarity(r){
   margin-top: 20px;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 .pack {
