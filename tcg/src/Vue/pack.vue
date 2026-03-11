@@ -1,7 +1,11 @@
 <template>
     <div class = "packopenerpage">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <img v-if = "!openingpack && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+=======
+      <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+>>>>>>> Stashed changes
 =======
       <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
 >>>>>>> Stashed changes
@@ -11,7 +15,12 @@
         <h5>{{currentcard.name}}</h5>
       </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <div v-if="summary">
+=======
+    </div>
+      <div v-if = "summary" @click = "reset">
+>>>>>>> Stashed changes
 =======
     </div>
       <div v-if = "summary" @click = "reset">
@@ -19,10 +28,9 @@
         <h2> You Pulled : </h2>
         <div class = "summary">
           <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
-        </div> 
+        </div>
       </div>
       </div> 
-    </div>
 </template>
 
 <script setup>
@@ -201,6 +209,9 @@ function finish(){
 function reset(){
   summary.value = false
 }
+function reset(){
+  summary.value = false
+}
 function rarity(r){
   if (r === 1) return "common"
   if (r === 2) return "uncommon"
@@ -229,7 +240,10 @@ function rarity(r){
   gap: 20px;
   margin-top: 20px;
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 .pack {
   width: 250px;
   cursor: pointer;

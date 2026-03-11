@@ -1,15 +1,12 @@
 <template>
     <div>
         <h2>Your cards</h2>
-        <div class = "index"></div>
-        <Carddisplaye v-for = "card in pack" :key="card.name" :card = "card"/>
+        <pulledcards/>
     </div>
 </template>
 
 <script setup>
-import Carddisplaye from '@/Components/carddisplaye.vue';
-
-
+import pulledcards from '@/Components/pulledcards.vue';
 
 </script>
 
