@@ -1,13 +1,22 @@
 <template>
     <div class = "packopenerpage">
-      <img v-if = "!openingpack" src = "/packcover.png" class = "pack" @click = "openpack">
+<<<<<<< Updated upstream
+      <img v-if = "!openingpack && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+=======
+      <img v-if = "!openingpack  && !summary" src = "/packcover.png" class = "pack" @click = "openpack">
+>>>>>>> Stashed changes
       <div v-if = "openingpack && currentcard" class = "cardcontainer">
         <div class="card" :class="rarity(currentcard.rarity)" @click="nextcard">
           <img :src = "currentcard.image"/>
         <h5>{{currentcard.name}}</h5>
       </div>
-      <div v-if = "summary">
-        <h2> You Puller : </h2>
+<<<<<<< Updated upstream
+      <div v-if="summary">
+=======
+    </div>
+      <div v-if = "summary" @click = "reset">
+>>>>>>> Stashed changes
+        <h2> You Pulled : </h2>
         <div class = "summary">
           <Carddisplaye v-for = "card in pack" :key = "card.name" :card = "card"/>
         </div> 
@@ -19,6 +28,8 @@
 <script setup>
 import {ref} from 'vue'
 import Carddisplaye from '@/Components/carddisplaye.vue';
+import { cards } from '@/pulledcards.js'
+
 
 const mythical = [
   { name: "Venti", rarity: 2, role: "Sub DPS", image: "/Venti_Wish.webp" },
@@ -173,14 +184,22 @@ function nextcard(){
   index.value ++
   if (index.value < pack.value.length){
     currentcard.value = pack.value[index.value]
+    console.log(currentcard.value, pack.value.length)
   } else {
     finish()
+    console.log("i should show smth")
   }
 }
 function finish(){
+  cards.value.push(...pack.value);
   openingpack.value = false 
   summary.value = true
   currentcard.value = null
+  console.log(summary.value)
+}
+
+function reset(){
+  summary.value = false
 }
 function rarity(r){
   if (r === 1) return "common"
@@ -202,9 +221,17 @@ function rarity(r){
   background-color: #FCF6F5;
   min-height: 100vh;
 }
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
 
 .pack {
-  width: 200px;
+  width: 250px;
   cursor: pointer;
   margin-top: 70px;
 }
@@ -247,6 +274,3 @@ h5 {
   gap: 10px;
 }
 </style>
-
-<!-- background = #FCF6F5
-words = #7b9acc  -->
