@@ -1,6 +1,5 @@
 <template>
     <div class = "home">
-      <Navigationbar></Navigationbar>
       <div class = "topack">
         <RouterLink to="/pack">
           <img src="/packcover.png">
