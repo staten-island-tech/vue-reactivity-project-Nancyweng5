@@ -13,6 +13,5 @@ import pulledcards from '@/Components/pulledcards.vue';
 <style  scoped>
 .index{
     background-color: #FCF6F5;
-    width: 300px;
 }
 </style>

@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { cards } from '@/pulledcards.js'
+import { cards } from '@/Pulledcards.js'
 import Carddisplaye from './carddisplaye.vue'
 </script>
 

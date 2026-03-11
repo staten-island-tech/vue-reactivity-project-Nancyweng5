@@ -36,6 +36,7 @@ const mythical = [
  { name: "Bennett", rarity: 5, role: "Support", image: "/Benny.webp" },
  { name: "Skirk", rarity: 4, role: "Main DPS", image: "/Skirk_Wish.webp" },
  { name: "Nahida", rarity: 4, role: "Sub DPS", image: "/Nahida_Wish.webp" },
+ { name: "Wanderer", rarity: 3, role: "Main DPS", image: "/Wanderer_Wish.webp" },
 ];
 const legendary = [
  { name: "Ineffa", rarity: 5, role: "Sub DPS", image: "/Ineffa_Wish.webp" },
@@ -44,7 +45,6 @@ const legendary = [
  { name: "Yelan", rarity: 5, role: "Sub DPS", image: "/Yelan_Wish.webp" },
  { name: "Xilonen", rarity: 5, role: "Support", image: "/Xilonen_Wish.webp" },
  { name: "Citlali", rarity: 5, role: "Support", image: "/citlali.webp" },
- { name: "Zibai", rarity: 5, role: "Main DPS", image: "/Zibai_Wish.webp" },
  { name: "Ororon", rarity: 5, role: "Support", image: "/Ororon_Wish.webp" },
  { name: "Alhaitham", rarity: 4, role: "Main DPS", image: "/Alhaitham.webp" },
  { name: "Varesa", rarity: 4, role: "Main DPS", image: "/Varesa_Wish.webp" },
@@ -57,7 +57,7 @@ const legendary = [
  { name: "Arlecchino", rarity: 4, role: "Main DPS", image: "/Arle.webp" },
  { name: "Clorinde", rarity: 4, role: "Main DPS", image: "/Clorinde.webp" },
  { name: "Xingqiu", rarity: 4, role: "Sub DPS", image: "/Xingqiu_Wish.webp" },
- { name: "Chevreuse", rarity: 4, role: "Support", image: "/Chevreuse.webp" },
+ { name: "Cheveruse", rarity: 4, role: "Support", image: "/Cheveruse.webp" },
  { name: "Xiao", rarity: 3, role: "Main DPS", image: "/Xiao_Wish.webp" },
 ];
 const epic = [
@@ -76,7 +76,6 @@ const epic = [
  { name: "Fischl", rarity: 4, role: "Sub DPS", image: "/Fischl_Wish.webp" },
  { name: "Kuki Shinobu", rarity: 4, role: "Sub DPS", image: "/Kuki_Shinobu_Wish.webp" },
  { name: "Xiangling", rarity: 4, role: "Sub DPS", image: "/Xiangling_Wish.webp" },
- { name: "Wanderer", rarity: 3, role: "Main DPS", image: "/Wanderer_Wish.webp" },
 ];
 const rare = [
  { name: "Kamisato Ayaka", rarity: 3, role: "Main DPS", image: "/Kamisato_Ayaka_Wish.webp" },

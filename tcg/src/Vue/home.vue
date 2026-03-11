@@ -17,10 +17,10 @@ import { RouterLink } from 'vue-router';
 display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   background-color: #FCF6F5;
 }
 .packcover {
-    width: 250px;
+    width: 200px;
 }
 </style>
